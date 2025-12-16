@@ -15,3 +15,16 @@ STEP 3: Implemented API gateway to trigger the Lambda Function
 STEP 4: Incorporate Database using DynamoDB to store and retrieve results
 
 
+## Security Enhancements: IAM Least Privilege
+
+To enforce the principle of **least privilege**, the Lambda execution role was restricted to only the DynamoDB actions required by the application.
+
+- **Inline policy:** Limited to `dynamodb:PutItem` on the specific DynamoDB table ARN (account ID redacted for security).
+- **Benefit:** Reduces risk of accidental data exposure or modification, while still allowing the Lambda function to insert new math results.
+
+This demonstrates secure role design and adherence to cloud security best practices.
+
+
+
+
+
