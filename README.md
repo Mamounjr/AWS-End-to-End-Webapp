@@ -1,2 +1,4 @@
 # AWS-End-to-End-Webapp
-Creating a functional web application in AWS integrating Amplify, Lambda, IAM, API Gateway and DynamoDB
+Developing a functional web application on AWS by integrating Amplify, Lambda, IAM, API Gateway, and DynamoDB.
+
+This portfolio project focuses on implementing an AWS web application with an emphasis on security, resilience, and reproducibility.
