@@ -79,7 +79,7 @@ It highlights:
 
 ---
 
-##Threat Model
+## Threat Model
 
 This project applies a basic threat modeling approach to identify key assets, potential threats, and the controls used to mitigate them.
 
@@ -89,7 +89,7 @@ This project applies a basic threat modeling approach to identify key assets, po
 - **Data:** Math operation results stored in DynamoDB.
 - **Audit data:** CloudTrail logs stored in an encrypted S3 bucket.
 
-##Key Threats
+## Key Threats
 - **Unauthorized access to data:** Attackers attempting to read or modify stored results.
 - **Abuse of API endpoints: **High or malicious requests targeting the API (e.g., brute force, basic DoS).
 - **Misuse of AWS credentials or permissions:**Overly permissive IAM roles or compromised access keys
