@@ -79,6 +79,29 @@ It highlights:
 
 ---
 
+##Threat Model
+
+This project applies a basic threat modeling approach to identify key assets, potential threats, and the controls used to mitigate them.
+
+## Assets
+- **Application frontend:** Deployed via Amazon Amplify
+- **Backend logic:** AWS Lambda function behind API Gateway.
+- **Data:** Math operation results stored in DynamoDB.
+- **Audit data:** CloudTrail logs stored in an encrypted S3 bucket.
+
+##Key Threats
+- **Unauthorized access to data:** Attackers attempting to read or modify stored results.
+- **Abuse of API endpoints: **High or malicious requests targeting the API (e.g., brute force, basic DoS).
+- **Misuse of AWS credentials or permissions:**Overly permissive IAM roles or compromised access keys
+- **CORS restrictions:** API Gateway is configured to accept requests only from the Amplify frontend domain, reducing unauthorized cross-origin access.
+- **Encryption at rest:** DynamoDB and CloudTrail logs are protected using AWS KMS, limiting exposure if storage is accessed.
+
+### Residual Risks and Future Enhancements 
+- **Monitoring and alerting:** CloudWatch metrics and alarms were not enabled in this build to avoid costs, but would be used in production to detect anomalies (e.g., spikes in 4xx/5xx errors, Lambda throttling).
+- **Secrets management:** For larger or more complex applications, AWS Systems Manager Parameter Store or AWS Secrets Manager would be used to store configuration and secrets instead of hardcoding values. This threat model demonstrates a structured approach to thinking about risks and applying practical security controls in a serverless architecture.
+
+---
+
 ## Lessons Learned
 - How to classify serverless apps as **three-tier architectures**.  
 - The importance of **least privilege IAM policies** in real-world deployments.  
