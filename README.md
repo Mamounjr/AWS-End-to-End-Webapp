@@ -91,8 +91,8 @@ This project applies a basic threat modeling approach to identify key assets, po
 
 ## Key Threats
 - **Unauthorized access to data:** Attackers attempting to read or modify stored results.
-- **Abuse of API endpoints: **High or malicious requests targeting the API (e.g., brute force, basic DoS).
-- **Misuse of AWS credentials or permissions:**Overly permissive IAM roles or compromised access keys
+- **Abuse of API endpoints:** High or malicious requests targeting the API (e.g., brute force, basic DoS).
+- **Misuse of AWS credentials or permissions:** Overly permissive IAM roles or compromised access keys
 - **CORS restrictions:** API Gateway is configured to accept requests only from the Amplify frontend domain, reducing unauthorized cross-origin access.
 - **Encryption at rest:** DynamoDB and CloudTrail logs are protected using AWS KMS, limiting exposure if storage is accessed.
 
